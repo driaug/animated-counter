@@ -19,13 +19,13 @@ export default function Counter({
     damping: 100,
     stiffness: 100,
   });
-  const isInView = useInView(ref, { once: true, margin: "-250px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   useEffect(() => {
     if (isInView) {
       motionValue.set(direction === "down" ? 0 : value);
     }
-  }, [motionValue, value, isInView, direction]);
+  }, [motionValue, isInView]);
 
   useEffect(
     () =>
