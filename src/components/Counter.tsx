@@ -14,7 +14,7 @@ export default function Counter({ value }: { value: number }) {
 
   useEffect(() => {
     if (isInView) {
-      motionValue.set(value);
+      motionValue.set(value > 0 ? value : 0);
     }
   }, [motionValue, value, isInView]);
 
