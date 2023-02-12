@@ -12,20 +12,34 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 16px;
 }
 
-section:last-child {
+section:nth-child(odd) {
     background-color: #171717;
-}
 
+}
 
 section h2 {
+    font-size: 1.5rem;
+    color: #171717;
+    margin: 0;
+    font-weight: 500;
+}
+
+section p {
     font-size: 3rem;
     color: #171717;
     letter-spacing: 2px;
     font-weight: 600;
+    margin: 0;
 }
 
-section:last-child h2 {
+section:nth-child(odd) h2 {
+    color: #d9d9d9
+}
+
+section:nth-child(odd) p {
     color: #fff;
 }

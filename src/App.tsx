@@ -6,14 +6,22 @@ export default function App() {
   return (
     <>
       <section>
-        <h2>
-          <Counter value={100} />
-        </h2>
+        <h2>0 to 1000</h2>
+        <p>
+          <Counter value={1000} />
+        </p>
       </section>
       <section>
-        <h2>
+        <h2>0 to -1000</h2>
+        <p>
+          <Counter value={-1000} />
+        </p>
+      </section>
+      <section>
+        <h2>1000 to 0</h2>
+        <p>
           <Counter value={1000} direction="down" />
-        </h2>
+        </p>
       </section>
     </>
   );

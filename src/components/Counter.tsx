@@ -15,7 +15,10 @@ export default function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);
-  const springValue = useSpring(motionValue);
+  const springValue = useSpring(motionValue, {
+    damping: 100,
+    stiffness: 100,
+  });
   const isInView = useInView(ref, { once: true, margin: "-250px" });
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export default function Counter({
         if (ref.current) {
           ref.current.textContent = Intl.NumberFormat("en-US").format(
             latest.toFixed(0)
-          ).replace("-", "");
+          );
         }
       }),
     [springValue]
