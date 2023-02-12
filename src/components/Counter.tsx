@@ -8,7 +8,7 @@ import { useInView, useMotionValue, useSpring } from "framer-motion";
  */
 export default function Counter({
   value,
-  direction,
+  direction = "up",
 }: {
   value: number;
   direction?: "up" | "down";

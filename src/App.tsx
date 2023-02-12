@@ -7,7 +7,7 @@ export default function App() {
     <>
       <section>
         <h2>
-          <Counter value={100} direction="up" />
+          <Counter value={100} />
         </h2>
       </section>
       <section>
