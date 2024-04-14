@@ -39,5 +39,5 @@ export function Counter({ value, direction = "up" }: Props) {
     [springValue, value, ref]
   );
 
-  return <span ref={ref}>0</span>;
+  return <span ref={ref}>{direction === "up" ? 0 : value}</span>;
 }
