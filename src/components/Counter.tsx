@@ -6,13 +6,18 @@ import { useInView, useMotionValue, useSpring } from "framer-motion";
  * @param root0
  * @param root0.value
  */
+
+type Props = {
+  value: number;
+  direction?: "up" | "down";
+  className?: string;
+};
+
 export default function Counter({
   value,
   direction = "up",
-}: {
-  value: number;
-  direction?: "up" | "down";
-}) {
+  className
+}: Props) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);
   const springValue = useSpring(motionValue, {
@@ -39,5 +44,5 @@ export default function Counter({
     [springValue]
   );
 
-  return <span ref={ref} />;
+  return <span className={className} ref={ref} />;
 }
